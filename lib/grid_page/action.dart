@@ -1,6 +1,6 @@
 import 'package:fish_redux/fish_redux.dart';
 
-enum GridAction { action, loadData }
+enum GridAction { action, loadData,openList }
 
 class GridActionCreator {
   static Action onAction() {
@@ -9,6 +9,10 @@ class GridActionCreator {
   
   static Action onLoadData() {
     return Action(GridAction.loadData);
+  }
+
+  static Action openList() {
+    return Action(GridAction.openList);
   }
 }
 

@@ -2,6 +2,7 @@
 import 'package:fish_redux/fish_redux.dart';
 import 'package:fish_redux_demo/Entrance_page/page.dart';
 import 'package:fish_redux_demo/grid_page/page.dart';
+import 'package:fish_redux_demo/list_page/page.dart';
 import 'package:flutter/material.dart';
 
 
@@ -11,6 +12,7 @@ Widget createApp() {
     pages: <String, Page<Object, dynamic>>{
       'entrance_page': EntrancePage(),  //在这里添加页面
       'grid_page': GridPage(),  //添加这一行
+      'list_page':ListPage(),
     },
   );
 

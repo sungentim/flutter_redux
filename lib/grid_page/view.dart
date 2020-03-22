@@ -1,4 +1,5 @@
 import 'package:fish_redux/fish_redux.dart';
+import 'package:fish_redux_demo/grid_page/action.dart';
 import 'package:flutter/material.dart';
 
 import 'state.dart';
@@ -21,7 +22,8 @@ Widget buildView(GridState state, Dispatch dispatch, ViewService viewService) {
             child: InkWell(
               splashColor: Colors.blue.withAlpha(100),
               onTap: () {
-                //todo 点击事件
+                // 点击事件
+                dispatch(GridActionCreator.openList());
               },
               child: Container(
                 width: 200,
