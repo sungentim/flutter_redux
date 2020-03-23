@@ -4,7 +4,8 @@ import 'package:fish_redux_demo/Entrance_page/page.dart';
 import 'package:fish_redux_demo/grid_page/page.dart';
 import 'package:fish_redux_demo/list_page/page.dart';
 import 'package:flutter/material.dart';
-
+import 'package:fish_redux_demo/store/state.dart';
+import 'package:fish_redux_demo/store/store.dart';
 
 
 Widget createApp() {
@@ -14,6 +15,22 @@ Widget createApp() {
       'grid_page': GridPage(),  //添加这一行
       'list_page':ListPage(),
     },
+    visitor: (String path,Page<Object,dynamic> page){
+        if(page.isTypeof<GlobalBaseState>()){
+          page.connectExtraStore<GlobalState>(GlobalStore.store, (Object pagestate,GlobalState appState){
+            final GlobalBaseState p = pagestate;
+          if (p.themeColor != appState.themeColor) {
+            if (pagestate is Cloneable) {
+              final Object copy = pagestate.clone();
+              final GlobalBaseState newState = copy;
+              newState.themeColor = appState.themeColor;
+              return newState;
+            }
+          }
+          return pagestate;
+          });
+        }
+    }
   );
 
   return MaterialApp(

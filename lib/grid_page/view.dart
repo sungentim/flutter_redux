@@ -8,6 +8,7 @@ Widget buildView(GridState state, Dispatch dispatch, ViewService viewService) {
   return Scaffold(
     appBar: new AppBar(
       title: new Text('Grid页面'),
+      backgroundColor: state.themeColor,
     ),
     body: new GridView.count(
       crossAxisCount: 2,//列数

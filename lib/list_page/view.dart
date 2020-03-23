@@ -7,7 +7,8 @@ Widget buildView(ListState state, Dispatch dispatch, ViewService viewService) {
   ListAdapter adapter = viewService.buildAdapter();
   return Scaffold(
       appBar: new AppBar(
-        title:Text('列表页')
+        title:Text('列表页'),
+        backgroundColor: state.themeColor,
       ),
       body: Container(
         child:ListView.builder(
