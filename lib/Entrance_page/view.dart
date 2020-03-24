@@ -19,8 +19,7 @@ Widget buildView(EntranceState state, Dispatch dispatch, ViewService viewService
             style: TextStyle(color: Colors.white),
           ),
           onPressed: () {
-                        dispatch(EntranceActionCreator.onOpenGrid());
-            //todo 点击事件
+            dispatch(EntranceActionCreator.onOpenGrid());
           }),
       ),
     ),

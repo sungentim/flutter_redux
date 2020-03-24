@@ -15,6 +15,6 @@ void _onAction(Action action, Context<EntranceState> ctx) {
 
 //处理openGrid事件
 void _onOpenGrid(Action action, Context<EntranceState> ctx) {
-  Navigator.of(ctx.context).pushNamed('grid_page', arguments: null);    //注意2
+  Navigator.of(ctx.context).pushNamed('grid_page', arguments: null);
 }
 
